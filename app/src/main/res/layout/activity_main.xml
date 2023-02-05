@@ -24,18 +24,23 @@
         android:orientation="vertical"
         tools:context=".ui.activity.MainActivity">
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv"
-            click="@{v}"
+        <com.drake.brv.PageRefreshLayout
+            android:id="@+id/refresh"
             android:layout_width="match_parent"
+            app:srlEnableLoadMore="false"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:stackFromEnd="true"
-            tools:itemCount="3"
-            tools:listitem="@layout/item_msg_right" />
+            android:layout_weight="1">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                click="@{v}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:stackFromEnd="true"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_msg_right" />
+        </com.drake.brv.PageRefreshLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/llInput"
